@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>ECHO-CHAMBER v2.1 - Safety Timer (Refactor)</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=JetBrains+Mono:wght@400;700&display=swap');
+
+    :root{
+      --bg-root:#000;
+      --accent-warn:#ef4444;
+      --accent-safe:#10b981;
+      --accent-soma:#f59e0b;
+      --accent-gamma:#a855f7;
+      --muted:#666;
+      --panel:#0a0a0a;
+    }
+
+    *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    html,body{height:100%;margin:0;color:#e2e8f0;background:var(--bg-root);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    .chassis{width:100%;max-width:560px;height:100vh;padding:20px;display:flex;flex-direction:column;justify-content:flex-start;background:radial-gradient(circle at bottom,#0f0f0f,#000);position:relative;overflow:hidden}
+
+    .header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+    .title{font-weight:800;letter-spacing:-1px;text-transform:uppercase}
+    .title span{font-family:'JetBrains Mono';font-size:10px;color:#888;margin-left:6px}
+
+    /* safety gate */
+    #safety-gate{position:absolute;inset:0;z-index:999;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;text-align:center}
+    #safety-gate[aria-hidden="true"]{display:none}
+    .gate-icon{font-size:40px;color:var(--accent-warn);margin-bottom:16px}
+    .gate-title{font-weight:800;font-size:18px;color:#fff;margin-bottom:8px}
+    .gate-text{color:#9aa3b2;font-size:14px;line-height:1.4;margin-bottom:20px;max-width:360px}
+    .gate-btn{padding:14px 28px;background:#111;border:1px solid #222;border-radius:28px;color:#fff;font-weight:700;cursor:pointer}
+
+    /* blackout
